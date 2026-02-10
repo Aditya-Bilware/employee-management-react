@@ -15,6 +15,7 @@ const Employees = () => {
   const employees = useSelector((state) => state.employee.employees);
   const loading = useSelector((state) => state.employee.loading);
   const loadingId = useSelector((state) => state.employee.loadingId);
+  const hasFetched = useSelector((state) => state.employee.hasFetched);
   // console.log(employees);
 
   if (loading) {
@@ -27,10 +28,10 @@ const Employees = () => {
     );
   }
 
-  if (employees.length === 0) {
+  if (hasFetched && employees.length === 0) {
     return (
       <div className="text-center text-white mt-5">
-        <h4>You haven’t added any employees yet</h4>
+        <h4>You haven't added any employees yet</h4>
         <p className="text-white-50">Click “Add Employee” to get started.</p>
       </div>
     );

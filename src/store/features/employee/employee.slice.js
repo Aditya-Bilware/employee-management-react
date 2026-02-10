@@ -10,6 +10,7 @@ const initialState = {
   employees: [],
   loading: false,
   loadingId: null,
+  hasFetched: false,
   error: null,
 };
 
@@ -26,10 +27,12 @@ export const employeeSlice = createSlice({
     addBuilder.addCase(getEmployees.fulfilled, (state, action) => {
       state.employees = action.payload;
       state.loading = false;
+      state.hasFetched = true;
     });
     addBuilder.addCase(getEmployees.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
+      state.hasFetched = true;
       //   state.employees = action.payload;
     });
 
