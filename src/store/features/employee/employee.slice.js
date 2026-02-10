@@ -61,7 +61,7 @@ export const employeeSlice = createSlice({
       state.loadingId = null;
 
       const index = state.employees.findIndex(
-        (e) => (e.id = action.payload.id),
+        (e) => e.id === action.payload.id,
       );
 
       if (index !== -1) {

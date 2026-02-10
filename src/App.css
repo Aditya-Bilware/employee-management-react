@@ -97,3 +97,17 @@ body{
   height: 32px;
   border-radius: 50%;
 }
+
+
+.list-group-item:hover {
+  background-color: #1f232b;
+  transition: background-color 0.2s ease;
+}
+@media (max-width: 768px) {
+  .bio-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

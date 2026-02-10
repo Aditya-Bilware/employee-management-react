@@ -32,6 +32,7 @@ export const postEmployee = createAsyncThunk(
 export const updateEmployee = createAsyncThunk(
   "employee/updateEmployee",
   async ({ id, details }, { rejectWithValue, dispatch }) => {
+    // console.log("proper working");
     try {
       const response = await api.put(`employee/${id}`, details);
       // dispatch(getEmployees());
